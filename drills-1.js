@@ -10,6 +10,14 @@ const getYearOfBirth = function (age) {
 
 const createGreeting = function (name, age) {
 
+  if ( typeof name !== 'string') {
+    throw new TypeError('name must be a string');
+  }
+
+  if ( typeof age !== 'number') {
+    throw new TypeError('age must be a number');
+  }
+
   const yearOfBirth = getYearOfBirth(age);
 
   return `Hi, my name is ${name} and I'm ${age} years old. I was born in ${yearOfBirth}`;
@@ -17,7 +25,7 @@ const createGreeting = function (name, age) {
 
 
 try {
-  const greeting = createGreeting('Ethan', 32);
+  const greeting = createGreeting('Ethan', '32');
   console.log(greeting);
 } catch (err) {
   console.log(err);
