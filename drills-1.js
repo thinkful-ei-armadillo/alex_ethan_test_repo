@@ -1,6 +1,14 @@
 
+const getYearOfBirth = function (age) {
+
+  return new Date().getFullYear() - age;
+};
+
 const createGreeting = function (name, age) {
-  return `Hi, my name is ${name} and I'm ${age} years old`;
+
+  const yearOfBirth = getYearOfBirth(age);
+
+  return `Hi, my name is ${name} and I'm ${age} years old. I was born in ${yearOfBirth}`;
 };
 
 
