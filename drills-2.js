@@ -15,5 +15,3 @@ function beyond(num) {
     console.log('Staying home');
   }
 }
-
-beyond(5);
