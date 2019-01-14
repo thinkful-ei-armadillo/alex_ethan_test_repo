@@ -51,3 +51,54 @@ const decode = function (cypherText) {
 
 
 console.log(decode('craft block argon meter bells brown croon droop'));
+
+
+
+const getDaysInMonth = function (month, leapYear) {
+
+  let numDays = null;
+
+  switch (month.toLowerCase()) {
+    case 'april':
+    case 'june':
+    case 'september':
+    case 'november':
+      numDays = 30;
+      break;
+
+    case 'february':
+      numDays = (leapYear) ? 29 : 28;
+      break;
+
+    case 'january':
+    case 'march':
+    case 'may':
+    case 'july':
+    case 'august':
+    case 'october':
+    case 'december':
+      numDays = 31;
+      break;
+
+    default:
+      throw new Error('Must provide a valid month');
+  }
+
+  return `${month} has ${numDays} days.`;
+};
+
+
+
+
+console.log(getDaysInMonth('january', true));
+console.log(getDaysInMonth('february', true));
+console.log(getDaysInMonth('march', true));
+console.log(getDaysInMonth('april', true));
+console.log(getDaysInMonth('may', true));
+console.log(getDaysInMonth('june', true));
+console.log(getDaysInMonth('july', true));
+console.log(getDaysInMonth('august', true));
+console.log(getDaysInMonth('september', true));
+console.log(getDaysInMonth('october', true));
+console.log(getDaysInMonth('november', true));
+console.log(getDaysInMonth('december', true));
