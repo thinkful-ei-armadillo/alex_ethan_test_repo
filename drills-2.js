@@ -91,14 +91,12 @@ const rockPaperScissors = function(num) {
 
   const randomNo = Math.floor(Math.random() * 3) + 1;
 
-  console.log(num,randomNo);
-
   if (num === randomNo) {
-    return "It's a tie";
+    return "It's a tie.";
   }
   if (num === choices.length && randomNo === choices[0]) {
-    return "You lost";
+    return "You lost.";
   } else {
-    return (num > randomNo) ? "You won" : "You lost";
+    return (num > randomNo) ? "You won!" : "You lost.";
   }
 }
