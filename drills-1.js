@@ -1,9 +1,9 @@
 
-const createGreeting = function () {
-  return "Hi, my name is Ethan and I'm 32 years old";
+const createGreeting = function (name, age) {
+  return `Hi, my name is ${name} and I'm ${age} years old`;
 };
 
 
-const greeting = createGreeting();
+const greeting = createGreeting('Ethan', 32);
 
 console.log(greeting);
