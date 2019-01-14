@@ -49,11 +49,6 @@ const decode = function (cypherText) {
 
 };
 
-
-console.log(decode('craft block argon meter bells brown croon droop'));
-
-
-
 const getDaysInMonth = function (month, leapYear) {
 
   let numDays = null;
@@ -87,18 +82,23 @@ const getDaysInMonth = function (month, leapYear) {
   return `${month} has ${numDays} days.`;
 };
 
+const rockPaperScissors = function(num) {
+  const choices = [1,2,3]
 
+  if (!choices.includes(num)) {
+    throw new Error(`Please select one of the proper choices: ${choices.join()}`);
+  }
 
+  const randomNo = Math.floor(Math.random() * 3) + 1;
 
-console.log(getDaysInMonth('january', true));
-console.log(getDaysInMonth('february', true));
-console.log(getDaysInMonth('march', true));
-console.log(getDaysInMonth('april', true));
-console.log(getDaysInMonth('may', true));
-console.log(getDaysInMonth('june', true));
-console.log(getDaysInMonth('july', true));
-console.log(getDaysInMonth('august', true));
-console.log(getDaysInMonth('september', true));
-console.log(getDaysInMonth('october', true));
-console.log(getDaysInMonth('november', true));
-console.log(getDaysInMonth('december', true));
+  console.log(num,randomNo);
+
+  if (num === randomNo) {
+    return "It's a tie";
+  }
+  if (num === choices.length && randomNo === choices[0]) {
+    return "You lost";
+  } else {
+    return (num > randomNo) ? "You won" : "You lost";
+  }
+}
